@@ -1,0 +1,1748 @@
+/**
+ *
+ * Components List:
+ * 1. Default Button
+ * 2. Fill Button
+ * 3. Inputs
+ * 4. Navigation desktop
+ * 5. Select Languages
+ * 6. Socials
+ * 7. Box Style
+ * 8. Checkbox
+ * 8. File Upload
+ * 9. Range Slider
+ * 10. Button Copy ClickBoard
+ * 11. Button Icon
+ * 12. Button Add Channel
+ *
+ */
+
+
+// 1. Default Button
+// =====
+// Default Button
+// Variables Box Shadows:
+$btn-shadow: -6px -6px 12px rgba(255, 255, 255, 0.81), 8px 8px 12px #CBD3DA
+$btn-shadow-zero: 0 0 0 rgba(255, 255, 255, 0.81), 0 0 0 #CBD3DA
+$btn-shadow-zero-press: inset 0 0 0 rgba(255, 255, 255, 0.95), inset 0 0 0 #CBD3DA
+$btn-shadow-press: inset -2px -2px 4px rgba(255, 255, 255, 0.95), inset 6px 6px 12px #CBD3DA
+
+// animation Default Button:
+@keyframes pressButton
+   from
+      box-shadow: $btn-shadow
+
+   49%
+      box-shadow: $btn-shadow-zero
+
+   50%
+      box-shadow: $btn-shadow-zero-press
+
+   to
+      box-shadow: $btn-shadow-press
+
+@keyframes unpressButton
+   from
+      box-shadow: $btn-shadow-press
+
+   49%
+      box-shadow: $btn-shadow-zero-press
+
+   50%
+      box-shadow: $btn-shadow-zero
+
+   to
+      box-shadow: $btn-shadow
+
+.btn
+   position: relative
+   display: inline-block
+   padding: 10px
+   color: #000
+   font-size: 28px
+   font-weight: 900
+   line-height: 1.5
+   text-decoration: none
+   border-radius: 6px
+   background-color: transparent
+   transition: border-radius .25s
+   box-shadow: $btn-shadow
+   animation: unpressButton .25s ease
+
+   &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: -1
+      display: block
+      background: linear-gradient(90.02deg, #E9F1F8 14.28%, #F1FAFF 77.79%)
+      border: 1px solid #F1FAFF
+      border-radius: inherit
+      opacity: 0
+      transition: opacity .25s, border-radius .25s
+
+   &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: -2
+      display: block
+      background: linear-gradient(270.02deg, #E9F1F8 14.28%, #F1FAFF 77.79%)
+      border: 1px solid #EDF6FC
+      border-radius: inherit
+      transition: border-radius .25s
+
+   span
+      position: relative
+      z-index: 2
+      display: inline-block
+      color: rgba(#000, 0)
+
+      &::after
+         content: attr(data-text)
+         position: absolute
+         top: 0
+         left: 0
+         display: inline-block
+         color: #000
+         font-weight: 900
+
+   &:hover
+      text-decoration: none
+      box-shadow: $btn-shadow-press
+      animation: pressButton .25s ease
+      border-radius: 12px
+
+      &::before
+         opacity: 1
+
+
+   &:active
+      text-decoration: none
+      box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.25), inset 6px 6px 12px rgba(210, 78, 49, 0.7)
+      animation: none
+      border-radius: 6px
+      background: linear-gradient(133.32deg, #FDD8A0 3.56%, #FC657C 97.58%)
+
+      &::before
+         opacity: 1
+
+      span::after
+         color: #fff
+         font-weight: 700
+
+// 2. Fill Button
+// =====
+// Fill Button
+// Variables Box Shadows:
+$btn-fill-shadow: -6px -6px 12px rgba(255, 255, 255, 0.25), 8px 8px 12px #CCD3DB
+$btn-fill-shadow-zero: 0 0 0 rgba(255, 255, 255, 0.25), 0 0 0 #CCD3DB
+$btn-fill-shadow-zero-press: inset 0 0 0 rgba(255, 255, 255, 0.25), inset 0 0 0 rgba(210, 78, 49, 0.7)
+$btn-fill-shadow-press: inset -2px -2px 4px rgba(255, 255, 255, 0.25), inset 6px 6px 12px rgba(210, 78, 49, 0.7)
+
+// animation Fill Button:
+@keyframes pressFillButton
+   from
+      box-shadow: $btn-fill-shadow
+
+   49%
+      box-shadow: $btn-fill-shadow-zero
+
+   50%
+      box-shadow: $btn-fill-shadow-zero-press
+
+   to
+      box-shadow: $btn-fill-shadow-press
+
+@keyframes unpressFillButton
+   from
+      box-shadow: $btn-fill-shadow-press
+
+   49%
+      box-shadow: $btn-fill-shadow-zero-press
+
+   50%
+      box-shadow: $btn-fill-shadow-zero
+
+   to
+      box-shadow: $btn-fill-shadow
+
+.btn-fill
+   position: relative
+   display: inline-block
+   height: 47px
+   padding: 10px 14px
+   color: #FFF
+   font-size: 18px
+   font-weight: 700
+   text-decoration: none
+   border-radius: 22px
+   box-shadow: -6px -6px 12px rgba(255, 255, 255, 0.25), 8px 8px 12px #CCD3DB
+   transition: border-radius .25s
+   animation: unpressFillButton .25s ease
+   box-shadow: $btn-fill-shadow
+
+   &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: -1
+      display: block
+      background: linear-gradient(44.32deg, #FDD8A0 3.56%, #FC657C 97.58%)
+      opacity: 0
+      border-radius: 24px
+      transition: opacity .25s
+      border: 1px solid #EF6E47
+
+   &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: -2
+      display: block
+      background: linear-gradient(133.32deg, #FDD8A0 3.56%, #FC657C 97.58%)
+      border: 1px solid #E5E5E5
+      transition: border-radius .25s
+      border-radius: 22px
+
+   span
+      position: relative
+      z-index: 2
+      display: inline-block
+      color: rgba(#FFF, 0)
+
+      &::after
+         content: attr(data-text)
+         position: absolute
+         top: 0
+         left: 0
+         display: inline-block
+         color: #fff
+         font-weight: 400
+         letter-spacing: 0.01em
+
+   i
+      position: absolute
+      top: -7px
+      left: -8px
+      right: -7px
+      bottom: -6px
+      z-index: -3
+      display: block
+      border: 2px solid #FFFFFF
+      border-radius: 28px
+      opacity: 0
+      transition: opacity .25s
+
+   &:hover
+      color: #fff
+      text-decoration: none
+      border-radius: 24px
+      box-shadow: $btn-fill-shadow-press
+      animation: pressFillButton .25s ease
+
+      &::before
+         opacity: 1
+
+      &::after
+         border-radius: 24px
+
+      span::after
+         font-weight: 700
+         letter-spacing: 0
+
+      i
+         opacity: 1
+
+      @media only screen and (min-width : $screen-md)
+         i
+            opacity: 0
+
+   &:active
+      color: #fff
+      text-decoration: none
+      border-radius: 22px
+      animation: unpressFillButton .25s ease
+      box-shadow: $btn-fill-shadow
+
+      &::before
+         opacity: 0
+
+      &::after
+         border-radius: 22px
+
+      span::after
+         font-weight: 400
+         letter-spacing: 0.01em
+
+      i
+         opacity: 1 !important
+
+   &--press
+      border-radius: 24px
+      box-shadow: $btn-fill-shadow-press
+      animation: pressFillButton .25s ease
+
+      &::before
+         opacity: 1
+
+      &::after
+         border-radius: 24px
+
+      &:hover
+         border-radius: 22px
+         animation: unpressFillButton .25s ease
+         box-shadow: $btn-fill-shadow
+
+         &::before
+            opacity: 0
+
+         &::after
+            border-radius: 22px
+
+      &:active
+         border-radius: 24px
+         box-shadow: $btn-fill-shadow-press
+         animation: pressFillButton .25s ease
+
+         &::before
+            opacity: 1
+
+         &::after
+            border-radius: 24px
+
+.btn-fill-clone
+   position: relative
+   display: inline-block
+   height: em(38.93, 14.9109)
+   padding: em(8.28, 14.9109) em(11.6, 14.9109)
+   color: #FFF
+   font-size: vw(14.9109, $design-mobile)
+   font-weight: 700
+   line-height: 1.5em
+   text-decoration: none
+   border-radius: em(18.2244, 14.9109)
+   box-shadow: em(-4.9703, 14.9109) em(-4.9703, 14.9109) em(9.9406, 14.9109) rgba(255, 255, 255, 0.25), em(6.62707, 14.9109) em(6.62707, 14.9109) em(9.9406, 14.9109) #CCD3DB
+   transition: border-radius .25s
+   animation: unpressFillButton .25s ease
+   box-shadow: $btn-fill-shadow
+
+   @media only screen and (min-width : $screen-md)
+      height: 47px
+      padding: 10px 14px
+      font-size: 18px
+      border-radius: 22px
+      box-shadow: -6px -6px 12px rgba(255, 255, 255, 0.25), 8px 8px 12px #CCD3DB
+
+   &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: -1
+      display: block
+      background: linear-gradient(44.32deg, #FDD8A0 3.56%, #FC657C 97.58%)
+      opacity: 0
+      border-radius: em(19.8956, 14.9109)
+      transition: opacity .25s
+      border: 1px solid #EF6E47
+
+      @media only screen and (min-width : $screen-md)
+         border-radius: 24px
+
+   &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: -2
+      display: block
+      background: linear-gradient(133.32deg, #FDD8A0 3.56%, #FC657C 97.58%)
+      border: 1px solid #E5E5E5
+      transition: border-radius .25s
+      border-radius: em(18.2244, 14.9109)
+
+      @media only screen and (min-width : $screen-md)
+         border-radius: 22px
+
+   span
+      position: relative
+      z-index: 2
+      display: inline-block
+      color: rgba(#FFF, 0)
+
+      &::after
+         content: attr(data-text)
+         position: absolute
+         top: 0
+         left: 0
+         display: inline-block
+         color: #fff
+         font-weight: 400
+         letter-spacing: 0.01em
+
+   i
+      position: absolute
+      top: em(-5.799, 14.9109)
+      left: em(-6.627, 14.9109)
+      right: em(-5.799, 14.9109)
+      bottom: em(-4.970, 14.9109)
+      z-index: -3
+      display: block
+      border: em(1.657, 14.9109) solid #FFFFFF
+      border-radius: em(23.195, 14.9109)
+      opacity: 0
+      transition: opacity .25s
+      
+      @media only screen and (min-width : $screen-md)
+         top: -7px
+         left: -8px
+         right: -7px
+         bottom: -6px
+         border-width: 2px
+         border-radius: 28px
+
+   &:hover
+      color: #fff
+      text-decoration: none
+      border-radius: em(19.8956, 14.9109)
+      box-shadow: $btn-fill-shadow-press
+      animation: pressFillButton .25s ease
+
+      &::before
+         opacity: 1
+
+      &::after
+         border-radius: em(19.8956, 14.9109)
+
+      span::after
+         font-weight: 700
+         letter-spacing: 0
+
+      i
+         opacity: 1
+
+      @media only screen and (min-width : $screen-md)
+         border-radius: 24px
+
+         &::after
+            border-radius: 24px
+
+         i
+            opacity: 0
+
+   &:active
+      color: #fff
+      text-decoration: none
+      border-radius: em(18.2244, 14.9109)
+      animation: unpressFillButton .25s ease
+      box-shadow: $btn-fill-shadow
+
+      @media only screen and (min-width : $screen-md)
+         border-radius: 22px
+
+      &::before
+         opacity: 0
+
+      &::after
+         border-radius: em(18.2244, 14.9109)
+
+         @media only screen and (min-width : $screen-md)
+            border-radius: 22px
+
+      span::after
+         font-weight: 400
+         letter-spacing: 0.01em
+
+      i
+         opacity: 1 !important
+
+   &--press
+      border-radius: em(19.8956, 14.9109)
+      box-shadow: $btn-fill-shadow-press
+      animation: pressFillButton .25s ease
+
+      @media only screen and (min-width : $screen-md)
+         border-radius: 24px
+
+      &::before
+         opacity: 1
+
+      &::after
+         border-radius: em(19.8956, 14.9109)
+
+         @media only screen and (min-width : $screen-md)
+            border-radius: 24px
+
+      &:hover
+         border-radius: em(18.2244, 14.9109)
+         animation: unpressFillButton .25s ease
+         box-shadow: $btn-fill-shadow
+
+         @media only screen and (min-width : $screen-md)
+            border-radius: 22px
+
+         &::before
+            opacity: 0
+
+         &::after
+            border-radius: em(18.2244, 14.9109)
+
+            @media only screen and (min-width : $screen-md)
+               border-radius: 22px
+
+      &:active
+         border-radius: em(19.8956, 14.9109)
+         box-shadow: $btn-fill-shadow-press
+         animation: pressFillButton .25s ease
+
+         @media only screen and (min-width : $screen-md)
+            border-radius: 24px
+
+         &::before
+            opacity: 1
+
+         &::after
+            border-radius: em(19.8956, 14.9109)
+
+            @media only screen and (min-width : $screen-md)
+               border-radius: 24px
+
+// 3. Inputs
+// =====
+// Input
+// Variables Box Shadows:
+$input-shadow: -6px -6px 12px rgba(255, 255, 255, 0.9), 8px 8px 12px #D1D8DE
+$input-shadow-zero: 0 0 0 rgba(255, 255, 255, 0.9), 0 0 0 #D1D8DE
+$input-shadow-zero-press: inset 0 0 0 rgba(255, 255, 255, 0.95), inset 0 0 0 #CBD3DA
+$input-shadow-press: inset -2px -2px 4px rgba(255, 255, 255, 0.95), inset 6px 6px 12px #CBD3DA
+
+// animation Input Shadow:
+@keyframes pressInput
+   from
+      box-shadow: $input-shadow
+
+   49%
+      box-shadow: $input-shadow-zero
+
+   50%
+      box-shadow: $input-shadow-zero-press
+
+   to
+      box-shadow: $input-shadow-press
+
+@keyframes unpressInput
+   from
+      box-shadow: $input-shadow-press
+
+   49%
+      box-shadow: $input-shadow-zero-press
+
+   50%
+      box-shadow: $input-shadow-zero
+
+   to
+      box-shadow: $input-shadow
+
+.input-box
+   position: relative
+   width: 100%
+   height: 62px
+
+   input
+      display: block
+      width: 100%
+      height: 62px
+      padding: 19px 19px 16px 23px
+      color: #000
+      font-size: 18px
+      font-weight: 400
+      border-radius: 6px
+      background-color: transparent
+      box-shadow: $input-shadow
+      animation: unpressInput .25s ease
+
+      &::placeholder
+         text-transform: uppercase
+
+   &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: -2
+      display: block
+      background: linear-gradient(252.64deg, #E9F1F8 40.3%, #F1FAFF 56.69%)
+      border: 1px solid #EDF6FC
+      border-radius: 6px
+
+   span
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: -1
+      display: block
+      background: linear-gradient(160.64deg, #E9F1F8 40.3%, #F1FAFF 56.69%)
+      border: 1px solid #F1FAFF
+      border-radius: 6px
+      opacity: 0
+      transition: opacity .25s
+
+   input:hover,
+   input:active,
+   input:focus
+      box-shadow: $input-shadow-press
+      animation: pressInput .25s ease
+
+      & + span
+         opacity: 1
+
+.input-def
+   display: block
+   width: 100%
+   height: em(41, 14.9109)
+   padding: em(9, 14.9109) em(16, 14.9109) em(9, 14.9109) em(20, 14.9109)
+   color: #2B2B2B
+   font-size: vw(14.9109, $design-mobile)
+   font-weight: 500
+   font-family: $font
+   line-height: 1.5em
+   border-radius: em(19.8812, 14.9109)
+   border: em(0.828384, 14.9109) solid #F1FAFF
+   background: linear-gradient(160.01deg, #E9F1F8 23.58%, #F1FAFF 75.95%)
+   box-shadow: inset em(-1.65677, 14.9109) em(-1.65677, 14.9109) em(3.31353, 14.9109) rgba(255, 255, 255, 0.95), inset em(4.9703, 14.9109) em(4.9703, 14.9109) em(9.9406, 14.9109) #CBD3DA
+
+   &::placeholder
+      color: #2B2B2B
+      font-weight: 300
+
+   @media only screen and (min-width : $screen-md)
+      height: 47px
+      padding: 10px 21px 10px 23px
+      font-size: 18px
+      line-height: em(27, 18)
+      border-radius: 24px
+      border-width: 1px
+      box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.95), inset 6px 6px 12px #CBD3DA
+      
+
+// 4. Navigation desktop
+.navigation
+
+   &__list
+      position: relative
+      display: flex
+      flex-wrap: nowrap
+      width: max-content
+      max-width: 100%
+      margin: 0
+      padding: 3.83px 6px 3px
+      list-style: none
+      border-radius: 24px
+      overflow: hidden
+
+      &::before
+         content: ''
+         position: absolute
+         top: 0
+         left: 0
+         right: 0
+         bottom: 0
+         display: block
+         background: linear-gradient(2.01deg, #E9F1F8 23.58%, #F1FAFF 75.95%)
+         border: 1px solid #F1FAFF
+         border-radius: 24px
+         box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.75), inset 6px 6px 12px #CBD3DA
+
+   a
+      position: relative
+      z-index: 2
+      display: block
+      padding: 6.17px 19px 5px 20px
+      color: #000
+      font-size: 18px
+      font-weight: 400
+      line-height: 1.5em
+
+      &::before
+         content: attr(data-text)
+         position: absolute
+         top: 6.17px
+         left: 0
+         right: 0
+         display: block
+         color: #000
+         font-weight: 700
+         text-align: center
+         opacity: 0
+
+      &.selelcted,
+      &:hover
+         color: rgba(0, 0, 0, .0)
+
+         &::before
+            opacity: 1
+
+   li.selected a
+      color: rgba(0, 0, 0, .0)
+
+      &::before
+         opacity: 1
+
+   &__sticky
+      position: absolute
+      z-index: 1
+      top: 3.83px
+      display: block
+      height: 38.16px
+      border-radius: 22px
+      box-shadow: -6px -6px 12px rgba(255, 255, 255, 0.43), 8px 8px 12px #CAD2D9
+      background-clip: padding-box
+      border: solid 1px transparent
+      transition: left .15s, width .15s
+
+      &::before
+         content: ''
+         position: absolute
+         top: 0
+         left: 0
+         right: 0
+         bottom: 0
+         z-index: -1
+         display: block
+         margin: -1px
+         border-radius: inherit
+         background: linear-gradient(81.49deg, #E9F1F8 24.17%, #F1FAFF 81.8%)
+
+      &::after
+         content: ''
+         position: absolute
+         top: 0
+         left: 0
+         right: 0
+         bottom: 0
+         z-index: 1
+         display: block
+         border-radius: inherit
+         background: linear-gradient(93.6deg, #F1FAFF 25.58%, #E9F1F8 66.56%)
+
+
+// 5. Select Languages
+.languages
+   position: relative
+   z-index: 15
+   display: inline-block
+
+.languages-value
+   position: relative
+   z-index: 2
+   display: block
+   width: 40px
+   height: 40px
+   text-align: center
+   background-clip: padding-box
+   border: solid 1px transparent
+   border-radius: 22px
+
+   &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: -1
+      display: block
+      margin: -1px
+      border-radius: inherit
+      background: linear-gradient(171.49deg, #E9F1F8 24.17%, #F1FAFF 81.8%)
+      box-shadow: -6px -6px 12px rgba(255, 255, 255, 0.43), 8px 8px 12px #CAD2D9
+      opacity: 0
+      transition: opacity .2s
+
+      .languages.active &
+         opacity: 1
+         box-shadow: none
+
+   &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: 1
+      display: block
+      border-radius: inherit
+      background: linear-gradient(183.6deg, #F1FAFF 25.58%, #E9F1F8 66.56%)
+      opacity: 0
+      transition: opacity .2s
+
+      .languages.active &
+         opacity: 1
+
+   &__content
+      position: relative
+      display: block
+      width: 100%
+      padding: 8px 2px
+      z-index: 2
+      color: #2B2B2B
+      font-size: inherit
+      font-weight: 400
+      line-height: 22px
+      text-align: center
+
+      &::before
+         content: attr(data-text)
+         position: absolute
+         top: 8px
+         left: 0
+         right: 0
+         display: block
+         color: #2B2B2B
+         font-weight: 700
+         line-height: 22px
+         text-align: center
+         opacity: 0
+
+      .languages.active &
+         color: rgba(#2B2B2B, .0)
+
+         &::before
+            opacity: 1
+
+   &:hover
+      &::before,
+      &::after
+         opacity: 1
+
+      .languages-value__content
+         color: rgba(#2B2B2B, .0)
+
+         &::before
+            opacity: 1
+
+   &:focus
+      outline: none
+
+   &__icon
+      position: absolute
+      top: 9px
+      left: 100%
+      display: block
+      width: 25px
+      height: 25px
+      margin-left: -2px
+      padding: 8.44px 5.52px 8.54px
+      transition: transform .2s
+
+      stop
+         transition: .2s ease
+
+         &:first-child
+            stop-color: #000
+         &:last-child
+            stop-color: #000
+
+         .languages-value:hover &
+            &:first-child
+               stop-color: #FDD8A0
+            &:last-child
+               stop-color: #FC657C
+
+      .languages.active &
+         transform: rotate(-180deg)
+
+         stop
+            &:first-child
+               stop-color: #FDD8A0
+            &:last-child
+               stop-color: #FC657C
+
+   &__space
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: 10
+      display: block
+      margin: -1px
+      border-radius: inherit
+      cursor: pointer
+
+      &::after
+         content: ''
+         position: absolute
+         top: 9px
+         left: 100%
+         margin-left: -2px
+         display: block
+         width: 25px
+         height: 25px
+
+.languages-box-wrap
+   position: absolute
+   top: -8.54px
+   left: -3.71px
+   right: -4.17px
+   display: none
+   padding-top: 66px
+   padding-bottom: 22px
+   border-radius: 24px
+   border: 1px solid #F1FAFF
+   background: linear-gradient(-20.01deg, #E9F1F8 23.58%, #F1FAFF 75.95%)
+   box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.95), inset 6px 6px 12px #CBD3DA
+   overflow: hidden
+   
+   &::before
+      content: ''
+      position: absolute
+      top: 8.54px
+      left: 3.71px
+      display: block
+      width: 40px
+      height: 40px
+      border-radius: 22px
+      box-shadow: -6px -6px 12px rgba(255, 255, 255, 0.43), 8px 8px 12px #CAD2D9
+
+   .languages.active &
+      display: block
+
+.languages-box
+   margin: 0
+   padding: 0 5px
+   list-style: none
+
+   &__item
+      display: block
+      width: max-content
+      max-width: 100%
+      margin-left: auto
+      margin-right: auto
+      padding: 0 3px
+      text-align: center
+      cursor: pointer
+
+      a
+         display: inline-block
+         color: #000
+         font-size: 18px
+         font-weight: 400
+         line-height: 150%
+         text-decoration: none
+
+         &:hover
+            text-decoration: none
+
+         &:active
+            color: #000
+            background: linear-gradient(133.32deg, #FDD8A0 3.56%, #FC657C 97.58%)
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+            text-decoration: none
+
+
+      & + .languages-box__item
+         margin-top: 26px
+
+      &.selected
+         display: none
+
+
+// 6. Socials
+// =====
+// Social Buttons
+// Variables Box Shadows:
+$social-btn-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.25), inset 4px 4px 6px rgba(210, 78, 49, 0.7)
+$social-btn-shadow-zero: inset 0 0 0 rgba(255, 255, 255, 0.25), inset 0 0 0 rgba(210, 78, 49, 0.7)
+$social-btn-shadow-zero-press: 0 0 0 rgba(255, 255, 255, 0.25), 0 0 0 #CCD3DB
+$social-btn-shadow-press: -6px -6px 12px rgba(255, 255, 255, 0.25), 8px 8px 12px #CCD3DB
+
+// animation Default Button:
+@keyframes pressSocialButton
+   from
+      box-shadow: $social-btn-shadow
+
+   49%
+      box-shadow: $social-btn-shadow-zero
+
+   50%
+      box-shadow: $social-btn-shadow-zero-press
+
+   to
+      box-shadow: $social-btn-shadow-press
+
+@keyframes unpressSocialButton
+   from
+      box-shadow: $social-btn-shadow-press
+
+   49%
+      box-shadow: $social-btn-shadow-zero-press
+
+   50%
+      box-shadow: $social-btn-shadow-zero
+
+   to
+      box-shadow: $social-btn-shadow
+
+.social
+   display: flex
+   margin: 0
+   padding: 0
+   list-style: none
+
+   &__item
+      vertical-align: top
+
+.social-style-1
+   position: relative
+   display: block
+   width: 47px
+   height: 47px
+   border-radius: 12px
+   text-decoration: none
+
+   &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      display: block
+      border: 1px solid #F1FAFF
+      border-radius: 12px
+      background: linear-gradient(160.01deg, #E9F1F8 23.58%, #F1FAFF 75.95%)
+      box-shadow: inset 0 0 0 rgba(255, 255, 255, 0.95), inset 0 0 0 #CBD3DA
+      opacity: 0
+      transition: opacity .15s, box-shadow .2s
+
+   .svg-icon
+      position: relative
+      top: -4px
+      left: -4px
+      z-index: 2
+      width: 55px
+      height: 55px
+
+   stop
+      transition: .2s ease
+
+   &:hover
+      text-decoration: none
+
+      stop
+         &:first-child
+            stop-color: #000
+         &:last-child
+            stop-color: #000
+
+   &:active,
+   &:focus
+      stop
+         &:first-child
+            stop-color: #D5B078
+         &:last-child
+            stop-color: #CA334A
+
+      &::before
+         opacity: 1
+         box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.95), inset 4px 4px 8px #CBD3DA
+
+.social-style-2
+   position: relative
+   display: flex
+   align-items: center
+   align-content: center
+   justify-content: center
+   width: 40px
+   height: 40px
+   color: #EBF3FA
+   text-decoration: none
+   border-radius: 12px
+   transition: color .2s
+   box-shadow: $social-btn-shadow
+   animation: unpressSocialButton .25s ease
+
+   &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: -2
+      border-radius: inherit
+      border: 1px solid #EDF6FC
+      background: linear-gradient(180.02deg, #E9F1F8 14.28%, #F1FAFF 77.79%)
+      box-shadow: 0 0 0 rgba(255, 255, 255, 0.81), 0 0 0 #CBD3DA
+      transition:box-shadow .25s ease
+
+   &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: -1
+      border-radius: inherit
+      border: 1px solid #EF6E47
+      background: linear-gradient(43.32deg, #FDD8A0 3.56%, #FC657C 97.58%)
+      transition: border-color .2s, opacity .2s
+
+   &__icon
+      position: relative
+      z-index: 2
+      display: block
+      max-width: 25px
+      max-height: 25px
+
+      &--facebook
+         width: 10px
+         height: 20px
+
+      &--instagramm
+         width: 20px
+         height: 21px
+
+   &:hover
+      color: #EBF3FA
+      text-decoration: none
+      box-shadow: $social-btn-shadow-press
+      animation: pressSocialButton .25s ease
+
+      &::after
+         border-color: #E5E5E5
+
+   &:active,
+   &:focus
+      color: #000
+      box-shadow: $social-btn-shadow-press
+      animation: pressSocialButton .25s ease
+
+      &::before
+         box-shadow: -6px -6px 12px rgba(255, 255, 255, 0.81), 8px 8px 12px #CBD3DA
+
+      &::after
+         opacity: 0
+
+
+// 6. Box Style
+.box
+   position: relative
+   border: 2px solid transparent
+   border-radius: 12px
+   background-color: transparent
+   box-shadow: inset -2px -2px 10px rgba(255, 255, 255, 0.95), inset 6px 6px 20px #CBD3DA
+
+   &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: -2
+      display: block
+      margin: -2px
+      border-radius: inherit
+      background: linear-gradient(316.11deg, #E9F1F8 0%, #F1FAFF 98.13%)
+
+   &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: -1
+      display: block
+      border-radius: inherit
+      background: linear-gradient(160.01deg, #E9F1F8 23.58%, #F1FAFF 75.95%)
+
+
+// 8. Checkbox
+.checkbox label,
+.checkbox input[type="checkbox"],
+.checkbox::before,
+.checkbox::after
+   cursor: pointer
+
+.checkbox
+   position: relative
+   display: block
+   min-height: vw(20.76, $design-mobile)
+   padding: vw(2.49, $design-mobile) vw(4.15, $design-mobile) vw(2.49, $design-mobile) vw(33.21, $design-mobile)
+   font-size: vw(13.29, $design-mobile)
+   line-height: 1
+
+   @media only screen and (min-width : $screen-md)
+      min-height: 25px
+      padding: 2.5px 5px 2.5px 40px
+      font-size: inherit
+
+   ::selection
+      color: inherit
+      background: transparent
+
+   label
+      display: inline-block
+      margin: 0
+      font-size: vw(13.29, $design-mobile)
+      font-weight: 400
+      line-height: 1.5
+
+      @media only screen and (min-width : $screen-md)
+         font-size: 16px
+         line-height: 1.5
+
+      &::before
+         content: ''
+         position: absolute
+         top: 0
+         left: 0
+         z-index: 3
+         display: block
+         width: em(20.76, 13.29)
+         height: em(20.76, 13.29)
+         border-radius: em(9.96396, 13.29)
+         background: linear-gradient(43.32deg, #FDD8A0 3.56%, #FC657C 97.58%)
+         box-shadow: 0 0 0 #FFFFFF, 0 0 0 rgba(178, 186, 193, 0.91)
+         opacity: 0
+         transition: opacity .2s, box-shadow .25s
+
+         @media only screen and (min-width : $screen-md)
+            width: 25px
+            height: 25px
+            border-radius: 12px
+
+   span
+      @extend %gradient-text
+
+      transition: background .25s
+
+   &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 1
+      display: block
+      width: em(20.76, 13.29)
+      height: em(20.76, 13.29)
+      border-radius: em(9.96396, 13.29)
+      background: linear-gradient(133.32deg, #FDD8A0 3.56%, #FC657C 97.58%)
+
+      @media only screen and (min-width : $screen-md)
+         width: 25px
+         height: 25px
+         border-radius: 12px
+
+   &::after
+      content: ''
+      position: absolute
+      top: em(0.83, 13.29)
+      left: em(0.83, 13.29)
+      z-index: 2
+      display: block
+      width: em(19.1, 13.29)
+      height: em(19.1, 13.29)
+      border-radius: em(9.96396, 13.29)
+      background: linear-gradient(43.32deg, #FDD8A0 3.56%, #FC657C 97.58%)
+      box-shadow: inset em(-1.66066, 13.29) em(-1.66066, 13.29) em(3.32132, 13.29) rgba(255, 255, 255, 0.25), inset em(4.98198, 13.29) em(4.98198, 13.29) em(9.96396, 13.29) rgba(210, 78, 49, 0.7)
+      transition: box-shadow .25s
+
+      @media only screen and (min-width : $screen-md)
+         top: 1px
+         left: 1px
+         width: 23px
+         height: 23px
+         border-radius: 12px
+         box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.25), inset 6px 6px 12px rgba(210, 78, 49, 0.7)
+
+   &.checked
+      &::after
+         box-shadow: inset 0 0 0 rgba(255, 255, 255, 0.25), inset 0 0 0 rgba(210, 78, 49, 0.7)
+
+      label::before
+         opacity: 1
+         visibility: visible
+         box-shadow: em(-1.66066, 13.29) em(-1.66066, 13.29) em(3.32132, 13.29) #FFFFFF, em(4.98198, 13.29) em(4.98198, 13.29) em(9.96396, 13.29) rgba(178, 186, 193, 0.91)
+
+         @media only screen and (min-width : $screen-md)
+            box-shadow: -2px -2px 4px #FFFFFF, 4px 4px 10px rgba(178, 186, 193, 0.91)
+
+      span
+         background: transparent
+         -webkit-background-clip: border-box
+         -webkit-text-fill-color: currentcolor
+
+   input[type="checkbox"]
+      position: absolute
+      z-index: 4
+      top: 0
+      left: 0
+      width: em(20.76, 13.29)
+      height: em(20.76, 13.29)
+      opacity: 0
+
+      @media only screen and (min-width : $screen-md)
+         width: 25px
+         height: 25px
+
+
+// 8. File Upload
+.file-upload
+   position: relative
+
+   &__preview
+      position: relative
+      z-index: 1
+      display: block
+      width: 100%
+      height: em(41, 14.9109)
+      padding: em(9, 14.9109) em(16, 14.9109) em(9, 14.9109) em(20, 14.9109)
+      color: #2B2B2B
+      font-size: vw(14.9109, $design-mobile)
+      font-family: $font
+      line-height: 1.5em
+      white-space: nowrap
+      text-overflow: ellipsis
+      border-radius: em(19.8812, 14.9109)
+      border: em(0.828384, 14.9109) solid #F1FAFF
+      background: linear-gradient(160.01deg, #E9F1F8 23.58%, #F1FAFF 75.95%)
+      box-shadow: inset em(-1.65677, 14.9109) em(-1.65677, 14.9109) em(3.31353, 14.9109) rgba(255, 255, 255, 0.95), inset em(4.9703, 14.9109) em(4.9703, 14.9109) em(9.9406, 14.9109) #CBD3DA
+      overflow: hidden
+
+      @media only screen and (min-width : $screen-md)
+         height: 47px
+         padding: 10px 34px 10px 23px
+         font-size: 18px
+         line-height: em(27, 18)
+         border-radius: 24px
+         border-width: 1px
+         box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.95), inset 6px 6px 12px #CBD3DA
+         
+
+      &.active
+         font-weight: 500
+
+   &__input
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: 2
+      display: block
+      width: 100%
+      height: em(41, 14.9109)
+      font-size: vw(14.9109, $design-mobile)
+      line-height: 1.5em
+      opacity: 0
+      overflow: hidden
+      border-radius: em(19.8812, 14.9109)
+      cursor: pointer
+
+      @media only screen and (min-width : $screen-md)
+         height: 47px
+         font-size: 18px
+         line-height: em(27, 18)
+         border-radius: 24px
+
+.btn-fileUpload
+   @extend .btn-fill-clone
+
+   cursor: pointer
+   z-index: 11
+   display: block
+   width: max-content
+   max-width: 100%
+   margin-left: auto
+   margin-top: vw(12.43, $design-mobile)
+   margin-bottom: vw(23.21, $design-mobile)
+   text-align: center
+
+   @media only screen and (min-width : $screen-md)
+      margin-top: 15px
+      margin-bottom: 28px
+
+
+// 9. Range Slider
+.range-slider
+   display: flex
+   flex-wrap: wrap
+   width: 100%
+   justify-content: space-between
+   font-size: vw(11.6113, $design-mobile)
+   font-weight: 400
+   line-height: 1.5em
+
+   @media only screen and (min-width : $screen-md)
+      font-size: 14px
+      line-height: 1.5em
+
+   span
+      display: inline-block
+      min-width: em(20.70954545454546, 11.6113)
+      margin-left: em(5.798672727272727, 11.6113)
+      margin-right: em(5.798672727272727, 11.6113)
+
+      @media only screen and (min-width : $screen-md)
+         min-width: 25px
+         margin-left: 7px
+         margin-right: 7px
+
+   &__counter
+      color: #000
+      text-align: center
+
+   &__input
+      flex: 0 0 100%
+      width: 100%
+      max-width: 100%
+      height: em(9.92, 11.6113)
+      margin-top: em(7.5, 11.6113)
+      border-radius: em(4.97626, 11.6113)
+      border: em(0.829377, 11.6113) solid #EF6E47
+      background: linear-gradient(43.32deg, #FDD8A0 3.56%, #FC657C 97.58%)
+      box-shadow: inset em(-1.65875, 11.6113) em(-1.65875, 11.6113) em(3.31751, 11.6113) rgba(255, 255, 255, 0.25), inset em(4.97626, 11.6113) em(4.97626, 11.6113) em(9.95252, 11.6113) rgba(210, 78, 49, 0.7)
+      outline: none
+      appearance: none
+
+      @media only screen and (min-width : $screen-md)
+         height: 12px
+         margin-top: 9px
+         border-radius: 6px
+         border-width: 1px
+         box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.25), inset 6px 6px 12px rgba(210, 78, 49, 0.7)
+
+      &::-webkit-slider-thumb
+         appearance: none
+         width: em(20.73, 11.6113)
+         height: em(20.73, 11.6113)
+         border: 0
+         border-radius: em(9.95252, 11.6113)
+         background: linear-gradient(-47.32deg, #FDD8A0 3.56%, #FC657C 97.58%)
+         box-shadow: em(-1.65875, 11.6113) em(-1.65875, 11.6113) em(3.31751, 11.6113) rgba(255, 255, 255, 0.25), em(3.31751, 11.6113) em(3.31751, 11.6113) em(8.29377, 11.6113) rgba(30, 30, 30, 0.29)
+         cursor: pointer
+
+         @media only screen and (min-width : $screen-md)
+            width: 25px
+            height: 25px
+            border-radius: 12px
+            box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.25), 4px 4px 10px rgba(30, 30, 30, 0.29)
+
+      &::-moz-range-thumb
+         appearance: none
+         width: em(20.73, 11.6113)
+         height: em(20.73, 11.6113)
+         border: 0
+         border-radius: em(9.95252, 11.6113)
+         background: linear-gradient(-47.32deg, #FDD8A0 3.56%, #FC657C 97.58%)
+         box-shadow: em(-1.65875, 11.6113) em(-1.65875, 11.6113) em(3.31751, 11.6113) rgba(255, 255, 255, 0.25), em(3.31751, 11.6113) em(3.31751, 11.6113) em(8.29377, 11.6113) rgba(30, 30, 30, 0.29)
+         cursor: pointer
+
+         @media only screen and (min-width : $screen-md)
+            width: 25px
+            height: 25px
+            border-radius: 12px
+            box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.25), 4px 4px 10px rgba(30, 30, 30, 0.29)
+
+
+// 10. Button Copy ClickBoard
+.btn-clickboard
+   position: relative
+   display: block
+   width: vw(33.27, $design-mobile)
+   height: vw(33.27, $design-mobile)
+   padding: vw(6.65, $design-mobile)
+   background: transparent
+   border-radius: vw(18.2976, $design-mobile)
+   border: vw(0.83, $design-mobile) solid transparent
+   box-shadow: vw(-4.99024, $design-mobile) vw(-4.99024, $design-mobile) vw(9.98049, $design-mobile) rgba(255, 255, 255, 0.43), vw(6.65366, $design-mobile) vw(6.65366, $design-mobile) vw(9.98049, $design-mobile) #CAD2D9
+   transition: box-shadow .2s, border-color .2s
+
+   @media only screen and (min-width : $screen-md)
+      width: 40px
+      height: 40px
+      padding: 7px
+      border-radius: 22px
+      border-width: 1px
+      box-shadow: -6px -6px 12px rgba(255, 255, 255, 0.43), 8px 8px 12px #CAD2D9
+
+   &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: 1
+      display: block
+      margin: vw(-0.83, $design-mobile)
+      border-radius: inherit
+      background: linear-gradient(171.49deg, #E9F1F8 24.17%, #F1FAFF 81.8%)
+      box-shadow: vw(-2.49512, $design-mobile) vw(-2.49512, $design-mobile) vw(3.32683, $design-mobile) #FFFFFF, vw(0.831707, $design-mobile) vw(0.831707, $design-mobile) vw(3.32683, $design-mobile) rgba(204, 211, 219, 0.6)
+      transition: box-shadow .25s
+
+      @media only screen and (min-width : $screen-md)
+         margin: -1px
+         box-shadow: -3px -3px 4px #FFFFFF, 1px 1px 4px rgba(204, 211, 219, 0.6)
+
+   &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: 2
+      display: block
+      border-radius: inherit
+      background: linear-gradient(183.6deg, #F1FAFF 25.58%, #E9F1F8 66.56%)
+      box-shadow: inset 0 0 0 rgba(255, 255, 255, 0.95), inset 0 0 0 #CBD3DA
+      transition: box-shadow .25s
+
+   svg
+      position: relative
+      z-index: 3
+
+   &:hover,
+   &:active,
+   &:focus
+      box-shadow: 0 0 0 rgba(255, 255, 255, 0.43), 0 0 0 #CAD2D9
+      border-color: #F1FAFF
+
+      &::before
+         box-shadow: 0 0 0 #FFFFFF, 0 0 0 rgba(204, 211, 219, 0.6)
+
+      &::after
+         box-shadow: inset vw(-1.65676, $design-mobile) vw(-1.65676, $design-mobile) vw(3.31353, $design-mobile) rgba(255, 255, 255, 0.95), inset vw(3.31353, $design-mobile) vw(3.31353, $design-mobile) vw(6.62705, $design-mobile) #CBD3DA
+
+         @media only screen and (min-width : $screen-md)
+            box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.95), inset 4px 4px 8px #CBD3DA
+         
+// 11. Button Icon
+.btn-icon
+   position: relative
+   display: block
+   width: 40px
+   height: 40px
+   padding: 7px
+   background: transparent
+   border-radius: 22px
+   border: 1px solid transparent
+   box-shadow: -6px -6px 12px rgba(255, 255, 255, 0.43), 8px 8px 12px #CAD2D9
+   transition: box-shadow .2s, border-color .2s
+
+   &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: 1
+      display: block
+      margin: -1px
+      border-radius: inherit
+      background: linear-gradient(171.49deg, #E9F1F8 24.17%, #F1FAFF 81.8%)
+      box-shadow: -3px -3px 4px #FFFFFF, 1px 1px 4px rgba(204, 211, 219, 0.6)
+      transition: box-shadow .25s
+
+   &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: 2
+      display: block
+      border-radius: inherit
+      background: linear-gradient(183.6deg, #F1FAFF 25.58%, #E9F1F8 66.56%)
+      box-shadow: inset 0 0 0 rgba(255, 255, 255, 0.95), inset 0 0 0 #CBD3DA
+      transition: box-shadow .25s
+
+   svg
+      position: relative
+      z-index: 3
+
+   &:hover,
+   &:active,
+   &:focus
+      box-shadow: 0 0 0 rgba(255, 255, 255, 0.43), 0 0 0 #CAD2D9
+      border-color: #F1FAFF
+
+      &::before
+         box-shadow: 0 0 0 #FFFFFF, 0 0 0 rgba(204, 211, 219, 0.6)
+
+      &::after
+         box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.95), inset 4px 4px 8px #CBD3DA
+
+// 12. Button Add Channel
+// =====
+// Default Button
+// Variables Box Shadows:
+$btn-channel-shadow: -3px -3px 6px rgba(255, 255, 255, 0.25), 3px 3px 6px #CCD3DB
+$btn-channel-shadow-zero: 0 0 0 rgba(255, 255, 255, 0.25), 0 0 0 #CCD3DB
+$btn-channel-shadow-zero-press: inset 0 0 0 rgba(255, 255, 255, 0.25), inset 0 0 0 rgba(210, 78, 49, 0.7)
+$btn-channel-shadow-press: inset -2px -2px 4px rgba(255, 255, 255, 0.25), inset 6px 6px 12px rgba(210, 78, 49, 0.7)
+
+// animation Default Button:
+@keyframes pressButtonChannel
+   from
+      box-shadow: $btn-channel-shadow
+
+   49%
+      box-shadow: $btn-channel-shadow-zero
+
+   50%
+      box-shadow: $btn-channel-shadow-zero-press
+
+   to
+      box-shadow: $btn-channel-shadow-press
+
+@keyframes unpressButtonChannel
+   from
+      box-shadow: $btn-channel-shadow-press
+
+   49%
+      box-shadow: $btn-channel-shadow-zero-press
+
+   50%
+      box-shadow: $btn-channel-shadow-zero
+
+   to
+      box-shadow: $btn-channel-shadow
+
+
+.btn-add-channel
+   position: relative
+   display: flex
+   flex-wrap: nowrap
+   margin-top: em(15, 14.9109)
+   font-size: vw(14.9109, $design-mobile)
+   font-weight: 400
+   line-height: 1.5em
+
+   @media only screen and (min-width : $screen-md)
+      margin-top: 30px
+      font-size: 18px
+      line-height: 1.5em
+
+   &::before
+      content: ''
+      display: block
+      width: em(34.58, 14.9109)
+      height: em(34.58, 14.9109)
+      margin-right: em(12.97, 14.9109)
+      border-radius: 50%
+      border: em(0.828384, 14.9109) solid #E5E5E5
+      background: linear-gradient(133.32deg, #FDD8A0 3.56%, #FC657C 97.58%)
+      box-shadow: $btn-channel-shadow
+      animation: unpressButtonChannel .25s ease
+      transition: border-color .2s
+
+      @media only screen and (min-width : $screen-md)
+         width: 40px
+         height: 40px
+         margin-right: 15px
+         border-width: 1px
+
+   &::after
+      content: ''
+      position: absolute
+      top: em(-4.142, 14.9109)
+      left: em(-4.142, 14.9109)
+      z-index: 4
+      display: block
+      width: em(42.864, 14.9109)
+      height: em(42.864, 14.9109)
+      border-radius: 50%
+      border: em(1.6568, 14.9109) solid #FFFFFF
+      transition: opacity .2s
+      opacity: 0
+
+      @media only screen and (min-width : $screen-md)
+         top: -5px
+         left: -5px
+         width: 50px
+         height: 50px
+         border-width: 2px
+
+   i
+      position: absolute
+      top: em(9.07, 14.9109)
+      left: em(8.5, 14.9109)
+      display: block
+      width: em(17, 14.9109)
+      height: em(17, 14.9109)
+      background-image: url("data:image/svg+xml,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_ii_127_163)'%3E%3Cpath d='M1.59268 11.0849C1.17481 11.0849 0.83606 10.7461 0.83606 10.3283V10.3283C0.83606 9.91038 1.17481 9.57163 1.59268 9.57163H5.37578C7.883 9.57163 9.9155 7.53913 9.9155 5.03191V1.24881C9.9155 0.830939 10.2543 0.492188 10.6721 0.492188V0.492188C11.09 0.492188 11.4287 0.830938 11.4287 1.24881V5.03191C11.4287 7.53913 13.4612 9.57163 15.9685 9.57163H19.7516C20.1694 9.57163 20.5082 9.91038 20.5082 10.3283V10.3283C20.5082 10.7461 20.1694 11.0849 19.7516 11.0849H15.9685C13.4613 11.0849 11.4287 13.1174 11.4287 15.6246V19.4077C11.4287 19.8256 11.09 20.1643 10.6721 20.1643V20.1643C10.2543 20.1643 9.9155 19.8256 9.9155 19.4077V15.6246C9.9155 13.1174 7.883 11.0849 5.37578 11.0849H1.59268Z' fill='url(%23paint0_linear_127_163)'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_ii_127_163' x='-1.16394' y='-1.50781' width='27.6721' height='27.6719' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dx='6' dy='6'/%3E%3CfeGaussianBlur stdDeviation='6'/%3E%3CfeComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.796078 0 0 0 0 0.827451 0 0 0 0 0.854902 0 0 0 1 0'/%3E%3CfeBlend mode='normal' in2='shape' result='effect1_innerShadow_127_163'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/%3E%3CfeOffset dx='-2' dy='-2'/%3E%3CfeGaussianBlur stdDeviation='2'/%3E%3CfeComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.95 0'/%3E%3CfeBlend mode='normal' in2='effect1_innerShadow_127_163' result='effect2_innerShadow_127_163'/%3E%3C/filter%3E%3ClinearGradient id='paint0_linear_127_163' x1='17.0246' y1='0.928775' x2='21.539' y2='13.3369' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23E9F1F8'/%3E%3Cstop offset='1' stop-color='%23F1FAFF'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A")
+      background-repeat: no-repeat
+      background-size: cover
+
+      @media only screen and (min-width : $screen-md)
+         top: 10px
+         left: 10px
+         width: 20px
+         height: 20px
+
+   span
+      display: inline-block
+      margin-top: em(4.9703, 14.9109)
+      margin-bottom: em(5.7987, 14.9109)
+      color: #000
+      background: linear-gradient(133.32deg, #FDD8A0 3.56%, #FC657C 97.58%)
+      background-size: 150% 150%
+      background-position: center
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      text-decoration: none
+
+      @media only screen and (min-width : $screen-md)
+         margin-top: 6px
+         margin-bottom: 7px
+
+   &:hover,
+   &:active,
+   &:focus
+      &::before
+         border-color: #EF6E47
+         box-shadow: $btn-channel-shadow-press
+         animation: pressButtonChannel .25s ease
+
+   &:active,
+   &:focus
+
+      &::after
+         opacity: 1
+
+      span
+         background: transparent
+         -webkit-background-clip: border-box
+         -webkit-text-fill-color: currentcolor

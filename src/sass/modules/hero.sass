@@ -1,0 +1,329 @@
+.hero
+	position: relative
+	display: flex
+	flex-wrap: wrap
+	padding-top: vw(311.06, $design-mobile)
+	padding-left: vw(31, $design-mobile)
+	padding-right: vw(25, $design-mobile)
+	padding-bottom: vw(72.4, $design-mobile)
+
+	@media only screen and (min-width : $screen-md)
+		padding-top: vw(108)
+		padding-left: 50px
+		padding-right: 50px
+		padding-bottom: 0
+		margin-bottom: 100px
+
+	@media only screen and (min-width : $screen-xl)
+		max-width: vw(1188)
+		min-height: vw(552)
+		margin-left: auto
+		margin-right: auto
+		padding-left: vw(45)
+		padding-right: 0
+
+	@media only screen and (min-width : $screen-wide)
+		max-width: 1188px
+		min-height: 552px
+		padding-top: 108px
+		padding-left: 45px
+
+	&::after
+		content: ''
+		position: absolute
+		right: vw(215, $design-mobile)
+		bottom: vw(-18, $design-mobile)
+		z-index: -1
+		display: block
+		width: vw(110, $design-mobile)
+		height: vw(110, $design-mobile)
+		background: url('../img/plus-big.png') 0 0 no-repeat
+		background-size: cover
+
+		@media only screen and (min-width : $screen-md)
+			bottom: vw(-20)
+			width: vw(126)
+			height: vw(126)
+			right: 0
+
+		@media only screen and (min-width : $screen-wide)
+			bottom: -20px
+			width: 126px
+			height: 126px
+			right: -20px
+
+	&__content
+		display: flex
+		flex-wrap: nowrap
+		flex-direction: column
+		align-items: flex-start
+
+		@media only screen and (min-width : $screen-xl)
+			max-width: vw(1188)
+			flex: 0 0 vw(590)
+			max-width: vw(590)
+			margin-left: vw(78)
+
+		@media only screen and (min-width : $screen-wide)
+			max-width: 1188px
+			flex: 0 0 590px
+			max-width: 590px
+			margin-left: 78px
+
+		&__title
+			order: 2
+			position: relative
+			z-index: 3
+			width: 102%
+			margin-bottom: em(24.2, 19.2)
+			padding-left: em(2.2, 19.2)
+			font-size: vw(19.2, $design-mobile)
+			font-weight: 700
+			line-height: em(28.8, 19.2)
+
+			@media only screen and (min-width : $screen-md)
+				width: auto
+				margin-bottom: em(43, 32)
+				padding-left: em(62, 32)
+				font-size: vw(32)
+				font-size: 32px
+
+			@media only screen and (min-width : $screen-wide)
+				font-size: 32px
+
+			&::before
+				content: ''
+				position: absolute
+				top: 50%
+				left: em(-6, 32)
+				display: none
+				width: em(26, 32)
+				height: em(164, 32)
+				margin-top: em(-82, 32)
+				background: url('../img/title-line.png') 0 0 no-repeat
+				background-size: cover
+
+				@media only screen and (min-width : $screen-md)
+					display: block
+
+			span
+				position: relative
+				display: block
+
+				&::before
+					content: attr(data-text)
+					position: absolute
+					top: em(1, 32)
+					left: 0
+					right: em(-5, 32)
+					z-index: -1
+					display: block
+					font-style: italic
+					color: #000
+					background: linear-gradient(133.32deg, #FDD8A0 3.56%, #FC657C 97.58%)
+					background-size: 150% 150%
+					-webkit-background-clip: text
+					-webkit-text-fill-color: transparent
+					text-decoration: none
+
+				&:nth-child(2)::before
+					background-position: 50% 50%
+
+				&:nth-child(3)::before
+					background-position: 100% 100%
+
+		&__text-top
+			position: relative
+			margin-bottom: vw(55, $design-mobile)
+			color: #000
+			font-size: vw(15.64, $design-mobile)
+			font-weight: 300
+			line-height: em(18.33, 15.64)
+			text-transform: uppercase
+
+			@media only screen and (min-width : $screen-md)
+				margin-left: 0
+				margin-bottom: em(50, 22)
+				font-size: 22px
+				line-height: em(25.78, 22)
+
+			@media only screen and (min-width : $screen-xl)
+				font-size: vw(22)
+
+			@media only screen and (min-width : $screen-wide)
+				font-size: 22px
+
+			&::before
+				content: ''
+				position: absolute
+				right: 100%
+				top: 0
+				transform: translate(#{em(10, 22)}, 0)
+				display: block
+				width: em(60, 22)
+				height: em(60, 22)
+				font-size: 1em
+				margin-top: em(-4, 22)
+				margin-right: 20px
+				background: url('../img/team-separator.png') 0 0 no-repeat
+				background-size: cover
+				display: none
+
+				@media only screen and (min-width : $screen-md)
+					display: block
+					margin-right: 0
+					transform: translate(#{em(-30, 22)}, 0)
+
+			span
+				display: inline-block
+				font-size: em(12.8, 15.64)
+				line-height: em(15, 12.8)
+				vertical-align: top
+
+				@media only screen and (min-width : $screen-md)
+					font-size: em(18, 22)
+
+			strong
+				position: relative
+				display: block
+				margin-bottom: em(7.11, 17.07)
+				font-size: em(17.07, 12.8)
+				font-weight: 700
+				line-height: 1em
+
+				@media only screen and (min-width : $screen-md)
+					margin-bottom: em(10, 24)
+					font-size: em(24, 18)
+					line-height: 1em
+
+				&::before
+					content: attr(data-text)
+					position: absolute
+					top: em(1, 17.07)
+					left: em(1, 17.07)
+					display: block
+					padding-right: em(5, 17.07)
+					z-index: -1
+					font-size: 1em
+					font-style: italic
+					font-weight: 700
+					letter-spacing: 0.01em
+					color: #000
+					background: linear-gradient(180deg, rgba(183, 80, 245, 0.8) 0%, #1796E3 26.89%, #31FFFD 100%)
+					background-size: 200% 200%
+					-webkit-background-clip: text
+					-webkit-text-fill-color: transparent
+					text-decoration: none
+
+					@media only screen and (min-width : $screen-md)
+						top: em(1, 24)
+						left: em(1, 24)
+						padding-right: em(5, 24)
+
+		&__text-down
+			order: 3
+			color: #000
+			font-size: vw(13.8875, $design-mobile)
+			font-weight: 300
+			line-height: em(16.27, 13.8875)
+			text-transform: uppercase
+
+			@media only screen and (min-width : $screen-md)
+				font-size: 22px
+				line-height: em(25.78, 22)
+
+			@media only screen and (min-width : $screen-xl)
+				font-size: vw(22)
+				line-height: em(25.78, 22)
+
+			@media only screen and (min-width : $screen-wide)
+				font-size: 22px
+				line-height: em(25.78, 22)
+
+			span
+				display: block
+				margin-top: em(5.26, 13.8875)
+				text-align: right
+
+				&:first-child
+					margin-left: em(121.89, 13.8875)
+
+				&:last-child
+					margin-left: em(114.52, 13.8875)
+
+				@media only screen and (min-width : $screen-md)
+					display: inline-block
+					margin-top: 0
+					margin-left: 0
+
+					&:first-child
+						margin-left: 0
+
+					&:last-child
+						display: block
+						margin-top: em(11, 22)
+						margin-left: 0
+					
+			strong
+				position: relative
+				display: inline-block
+				margin-left: em(3, 13.8875)
+				font-size: 1em
+				font-weight: 700
+				line-height: em(16.27, 13.8875)
+
+				&::before
+					content: attr(data-text)
+					position: absolute
+					top: 9
+					left: 9
+					display: block
+					z-index: -1
+					font-size: 1em
+					font-style: italic
+					font-weight: 700
+					line-height: em(16.27, 13.8875)
+					color: #000
+					background: linear-gradient(180deg, rgba(183, 80, 245, 0.8) 0%, #1796E3 26.89%, #31FFFD 100%)
+					-webkit-background-clip: text
+					-webkit-text-fill-color: transparent
+					text-decoration: none
+
+				@media only screen and (min-width : $screen-md)
+					margin-left: 0
+					line-height: em(25.78, 22)
+
+					&::before
+						line-height: em(25.78, 22)
+
+					
+
+	&__image
+		position: absolute
+		top: 0
+		right: 0
+		z-index: -1
+		order: -1
+		display: block
+		width: vw(446.15, $design-mobile)
+		background: url('../img/hero-image.png') 0 0 no-repeat
+		background-size: cover
+
+		&::before
+			content: ''
+			position: relative
+			top: 0
+			left: 0
+			right: 0
+			display: block
+			padding-top: procent(445.01, 446.15)
+
+		@media only screen and (min-width : $screen-md)
+			width: vw(380, 768)
+
+			&::before
+				padding-top: procent(552, 553.42)
+
+		@media only screen and (min-width : $screen-wide)
+			width: 553.42px
+			height: 552px

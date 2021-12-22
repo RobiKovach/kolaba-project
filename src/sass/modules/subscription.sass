@@ -1,0 +1,170 @@
+$decor-cap-icon: url('data:image/svg+xml,%3Csvg width="338" height="379" viewBox="0 0 338 379" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath fill-rule="evenodd" clip-rule="evenodd" d="M289.661 131.814C291.075 129.704 289.391 126.901 286.864 127.159L58.3733 150.505C56.6867 150.677 55.58 152.157 55.6813 153.689C48.4874 165.547 61.9768 206.39 88.139 249.932C114.535 293.861 144.562 325.112 158.245 323.744C159.476 324.195 160.959 323.821 161.778 322.599L162.102 322.115C163.023 321.303 163.749 320.209 164.287 318.856L289.661 131.814Z" fill="url(%23decor-cap-grafient-1)"/%3E%3Cellipse cx="109.633" cy="237.094" rx="100.075" ry="25.0498" transform="rotate(59 109.633 237.094)" fill="url(%23decor-cap-gradient-2)"/%3E%3Cellipse opacity="0.5" cx="212.213" cy="197.032" rx="70.2613" ry="17.7759" transform="rotate(134.365 212.213 197.032)" fill="url(%23decor-cap-gradient-3)"/%3E%3Cdefs%3E%3ClinearGradient id="decor-cap-grafient-1" x1="283.455" y1="118.138" x2="140.623" y2="203.96" gradientUnits="userSpaceOnUse"%3E%3Cstop stop-color="%23B7CBCB"/%3E%3Cstop offset="0.414757" stop-color="%2337FFFE"/%3E%3Cstop offset="1" stop-color="%231CA7E6"/%3E%3C/linearGradient%3E%3ClinearGradient id="decor-cap-gradient-2" x1="97.5017" y1="212.044" x2="97.5017" y2="247.524" gradientUnits="userSpaceOnUse"%3E%3Cstop stop-color="%2364C5FF"/%3E%3Cstop offset="1" stop-color="%231CA7E6" stop-opacity="0"/%3E%3C/linearGradient%3E%3CradialGradient id="decor-cap-gradient-3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(212.213 197.032) rotate(90) scale(17.7759 70.2613)"%3E%3Cstop stop-color="%237FFFFE"/%3E%3Cstop offset="1" stop-color="%23ECF5FB" stop-opacity="0"/%3E%3C/radialGradient%3E%3C/defs%3E%3C/svg%3E')
+
+.subscription
+	position: relative
+	padding-left: vw(30, $design-mobile)
+	padding-right: vw(27, $design-mobile)
+	padding-bottom: vw(177.07, $design-mobile)
+	margin-bottom: vw(-26.07, $design-mobile)
+	overflow: hidden
+
+	@media only screen and (min-width : $screen-md)
+		margin-top: vw(125)
+		margin-bottom: vw(80)
+		padding-left: 15px
+		padding-right: 15px
+		padding-bottom: 100px
+		overflow: visible
+	
+	@media only screen and (min-width : $screen-wide)
+		margin-top: 125px
+		margin-bottom: 80px
+
+	&__title
+		margin-left: em(8, 14)
+		margin-bottom: em(30, 14)
+		color: #000
+		font-size: vw(14, $design-mobile)
+		font-weight: 400
+		line-height: 1.5
+
+		@media only screen and (min-width : $screen-md)
+			display: none
+
+	&__form
+		position: relative
+		z-index: 3
+		margin-left: auto
+		margin-right: auto
+		padding-right: vw(59, $design-mobile)
+
+		@media only screen and (min-width : $screen-md)
+			max-width: 531px
+			padding-right: 77px
+
+		.input-box
+			height: em(41, 11.8644)
+			font-size: vw(11.8644, $design-mobile)
+
+			input
+				height: em(41, 11.8644)
+				padding: em(11, 11.8644) em(19, 11.8644) em(13, 11.8644) em(11, 11.8644)
+				font-size: vw(11.8644, $design-mobile)
+				font-weight: 400
+				line-height: em(17.8, 11.8644)
+				border-radius: em(3.9548, 11.8644)
+
+				border: 0, solid #EDF6FC
+
+			&::before
+				border: em(.66, 11.8644) solid #EDF6FC
+				border-radius: em(3.9548, 11.8644)
+
+			span
+				border: em(.66, 11.8644) solid #F1FAFF
+				border-radius: em(3.9548, 11.8644)
+
+			@media only screen and (min-width : $screen-md)
+				height: 62px
+
+				input
+					height: 62px
+					padding: 19px 19px 16px 23px
+					font-size: 18px
+					font-weight: 400
+					border-radius: 6px
+
+				&::before
+					border-width: 1px
+					border-radius: 6px
+
+				span
+					border-width: 1px
+					border-radius: 6px
+
+		.btn
+			position: absolute
+			top: 0
+			right: 0
+			width: vw(41.53, $design-mobile)
+			height: vw(40.87, $design-mobile)
+			padding: em(6.59, 18.4557)
+			font-size: vw(18.4557, $design-mobile)
+			line-height: em(27.68, 18.4557)
+			border-radius: em(3.9548, 18.4557)
+
+			@media only screen and (min-width : $screen-md)
+				width: 62px
+				height: 62px
+				padding: 10px
+				font-size: 28px
+				line-height: 1.5
+				border-radius: 6px
+
+.decor-cap
+	position: absolute
+	z-index: 1
+	width: vw(174.11, $design-mobile)
+	bottom: 0
+	right: 0
+	overflow: hidden
+	transform: rotate(-6.91deg)
+
+	@media only screen and (min-width : $screen-md)
+		left: auto
+		right: 0
+		bottom: auto
+		top: vw(-15)
+		width: vw(338)
+		transform: rotate(0deg)
+
+	@media only screen and (min-width : $screen-lg)
+		top: vw(-85)
+
+	@media only screen and (min-width : $screen-wide)
+		width: 338px
+		top: -85px
+		right: auto
+		left: 50%
+		margin-left: 382px
+
+	&::before
+		content: ''
+		position: relative
+		display: block
+		width: 100%
+		padding-top: procent(379, 338)
+
+	&__icon
+		position: absolute
+		top: 0
+		left: 0
+		display: block
+		width: 100%
+		height: 100%
+		background-image: $decor-cap-icon
+		background-repeat: no-repeat
+		background-position: 0 0
+		background-size: cover
+
+	&__blur
+		position: absolute
+		top: procent(223, 379)
+		left: procent(43, 338)
+		width: procent(74, 338)
+		z-index: 2
+
+		&::before
+			content: ''
+			position: relative
+			display: block
+			width: 100%
+			padding-top: 100%
+
+		@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none)
+			background: rgba(196, 196, 196, 0.01)
+			backdrop-filter: blur(25px)
+
+		@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none))
+			background: url('../img/decor-cap__blur.png') 0 0 no-repeat
+			background-size: cover

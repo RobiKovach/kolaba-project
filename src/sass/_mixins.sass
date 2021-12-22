@@ -1,0 +1,17 @@
+// Design Sizes
+$design-mobile				: 375
+$design-desktop			: 1440
+
+$BROWSER-CONTEXT			: 18
+
+// px to em mixin
+@function em($pixels, $context: $BROWSER-CONTEXT)
+	@return #{$pixels/$context}em
+
+// get VW with Design Size
+@function vw($pixels, $context: $design-desktop)
+	@return #{($pixels/$context)*100}vw
+
+// get Procent
+@function procent($pixels, $context: $design-desktop)
+	@return #{($pixels/$context)*100%}

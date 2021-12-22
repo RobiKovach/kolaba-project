@@ -1,0 +1,194 @@
+$bg-modal: linear-gradient(90deg, #F1FAFF 0%, #E9F1F8 97.21%)
+
+// modals
+.modal-open
+	overflow: hidden
+
+	.modal-dialog
+		overflow-x: hidden
+		overflow-y: auto
+
+.modal
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 1050
+	display: none
+	width: 100%
+	height: 100%
+	overflow: hidden
+	outline: 0
+	background: $bg-modal
+
+	&.show
+		display: block
+
+.modal-dialog
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	max-width: none
+	height: 100%
+	margin: 0
+	padding: 0
+
+.modal-overlay
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 1
+	display: block
+	cursor: pointer
+
+.modal-container
+	position: relative
+	z-index: 2
+	display: flex
+	flex-direction: column
+	flex-wrap: nowrap
+	min-height: 100%
+	padding: 34px 14px 27px
+
+	&__header
+		display: flex
+		flex-wrap: nowrap
+		align-items: center
+		justify-content: space-between
+		width: 100%
+		margin-bottom: 35px
+		padding-right: 36px
+		padding-left: 14px
+
+	&__content
+		flex-grow: 1
+		display: flex
+		flex-direction: column
+		flex-wrap: nowrap
+		align-items: center
+
+		&__buttons-group
+			display: flex
+			flex-direction: column
+			flex-wrap: nowrap
+			margin-top: auto
+			margin-bottom: auto
+
+	&__footer
+		align-self: center
+		margin-top: 35px
+
+.modal
+	.btn-fill
+		width: max-content
+		min-width: 182px
+		max-width: 100%
+
+		& + .btn-fill
+			margin-top: 40px
+
+.btn-nav-link
+	position: relative
+	display: inline-block
+	width: max-content
+	min-width: 180px
+	max-width: 100%
+	height: 48px
+	padding: 9px 30px
+	color: #000
+	text-decoration: none
+	border-radius: 24px
+	border: 1px solid #F1FAFF
+	box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.95), inset 6px 6px 12px #CBD3DA
+	background: linear-gradient(70.01deg, #E9F1F8 23.58%, #F1FAFF 75.95%)
+	overflow: hidden
+
+	&::before
+		content: ''
+		position: absolute
+		top: 3px
+		right: 15px
+		bottom: 4px
+		left: 16px
+		z-index: 1
+		display: block
+		border-radius: 22px
+		background: linear-gradient(171.49deg, #E9F1F8 24.17%, #F1FAFF 81.8%)
+		box-shadow: 0 0 0 #CAD2D9
+		opacity: 0
+		transition: opacity .2s, box-shadow .25s
+
+	&::after
+		content: ''
+		position: absolute
+		top: 4px
+		right: 16px
+		bottom: 5px
+		left: 17px
+		z-index: 2
+		display: block
+		border-radius: 22px
+		background: linear-gradient(93.6deg, #F1FAFF 25.58%, #E9F1F8 66.56%)
+		box-shadow: 0 0 0 rgba(255, 255, 255, 0.43)
+		opacity: 0
+		transition: opacity .2s, box-shadow .25s
+
+	span
+		position: relative
+		z-index: 3
+		display: block
+		color: inherit
+		font-size: 18px
+		font-weight: 400
+		line-height: em(27, 18)
+		text-align: center
+		text-overflow: ellipsis
+		white-space: nowrap
+		overflow: hidden
+
+		&::after
+			content: attr(data-text)
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			display: block
+			color: #000
+			font-weight: 700
+			text-align: center
+			text-overflow: ellipsis
+			white-space: nowrap
+			overflow: hidden
+			opacity: 0
+
+	.active > &,
+	&:active,
+	&:focus,
+	&:hover
+		color: #000
+		text-decoration: none
+
+		&::before
+			box-shadow: 8px 8px 12px #CAD2D9
+			opacity: 1
+
+		&::after
+			box-shadow: -6px -6px 12px rgba(255, 255, 255, 0.43)
+			opacity: 1
+
+		span
+			color: rgba(0, 0, 0, .0)
+
+			&::after
+				opacity: 1
+
+.mobile-nav
+	margin: 24px 0 28px
+	padding: 0
+	list-style: none
+
+	&__item
+		& + .mobile-nav__item
+			margin-top: 15px

@@ -1,0 +1,46 @@
+html
+	height: 100%
+
+body
+	min-height: 100%
+
+.cabinet-wrapper
+	display: flex
+	flex-wrap: nowrap
+	flex-direction: column
+	min-height: calc(100vh - #{vw(90, $design-mobile)})
+	background: linear-gradient(90deg, #F5FEFF 0%, #EDF5FC 97.21%)
+
+	@media only screen and (min-width : $screen-md)
+		min-height: calc(100vh - 90px)
+
+	&__content
+		flex-grow: 1
+		display: flex
+		flex-wrap: nowrap
+		flex-direction: column
+		padding-top: vw(30, $design-mobile)
+		padding-bottom: vw(30, $design-mobile)
+
+		@media only screen and (min-width : $screen-md)
+			padding-top: 30px
+			padding-bottom: 30px
+
+	&__footer
+		position: relative
+		z-index: 2
+		margin-top: 0
+		padding-bottom: vw(49, $design-mobile)
+
+		@media only screen and (min-width : $screen-md)
+			padding-bottom: 49px
+
+		&::after
+			display: none
+
+		.footer-content
+			margin-top: 29px
+
+			@media only screen and (min-width : $screen-md)
+				margin-top: 0
+				align-self: center

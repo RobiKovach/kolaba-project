@@ -1,0 +1,154 @@
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+@import '_mixins'
+@import '_variables'
+@import 'fonts'
+
+
+// GENERAL DOCUMENT STYLES
+*,
+*:after,
+*:before
+	outline: none
+
+::placeholder
+	color: $color-placeholder
+	font-weight: 300
+
+::selection
+	background-color: $color-selection
+	color: #fff
+
+input, textarea
+	appearance: none
+
+	&:focus:required:invalid
+		border-color: $danger-color
+	&:required:valid
+		border-color: $success-color
+
+button
+	color: inherit
+	text-decoration: none
+	cursor: pointer
+
+button,
+input,
+textarea
+	padding: 0
+	font-family: $font
+	font-size: inherit
+	font-family: inherit
+	line-height: $line-height
+	background-color: transparent
+	border: none
+
+body
+	position: relative
+	width: 100%
+	min-width: 320px
+	color: $color-text
+	font-size: $font-size
+	font-weight: 300
+	font-family: $font
+	line-height: $line-height-body
+	background: linear-gradient(90deg, #F1FAFF 0%, #E9F1F8 97.21%)
+	-webkit-font-smoothing: antialiased
+	overflow-x: hidden
+
+a
+	color: inherit
+	text-decoration: none
+
+.svg-icon
+	display: block
+	width: 100%
+	height: 100%
+
+.title
+	color: #000
+	font-size: 24px
+	font-weight: 700
+	font-family: $font-title
+	line-height: $line-height
+	text-transform: uppercase
+
+	@media only screen and (min-width : $screen-md)
+		font-size: 32px
+
+.short-title
+	display: block
+	color: $primary-color
+	font-size: vw(21, $design-mobile)
+	font-weight: 200
+	font-family: $font
+	line-height: em(24.61, 21)
+	text-align: center
+	text-transform: uppercase
+
+	@media only screen and (min-width : $screen-md)
+		font-size: 32px
+		line-height: em(37.5, 32)
+
+%gradient-text
+	color: $color-text
+	background: linear-gradient(133.32deg, #FDD8A0 -23.56%, #FC657C 137.58%)
+	background-position: center
+	-webkit-background-clip: text
+	-webkit-text-fill-color: transparent
+
+.link
+	position: relative
+	background-image: linear-gradient(133.32deg, #FDD8A0 -23.56%, #FC657C 137.58%)
+	background-repeat: no-repeat
+	background-position: bottom left
+	background-size: 100% 1px
+	transition: background-size .2s
+
+	span
+		position: relative
+		z-index: 2
+		@extend %gradient-text
+
+	&:hover,
+	&:active
+		background-size: 0% 1px
+
+.text-center
+	text-align: center
+
+.copy-clickboard-popup
+	position: fixed
+	top: 50%
+	left: 50%
+	z-index: 1001
+	transform: translate(-50%, -50%)
+	display: block
+	padding: 20px
+	font-weight: 400
+	text-transform: uppercase
+	@extend %box-style
+
+// MODULES
+@import 'modules/swiper'
+@import 'modules/components'
+@import 'modules/header'
+@import 'modules/hero'
+@import 'modules/stats'
+@import 'modules/roadmap'
+@import 'modules/brands'
+//@import 'modules/team'
+@import 'modules/subscription'
+@import 'modules/faq'
+@import 'modules/social-big'
+@import 'modules/footer'
+@import 'modules/modal'
+
+// Kabinet
+@import 'cabinet/cabinet-header'
+@import 'cabinet/cabinet-wrapper'
+@import 'cabinet/cabinet-dashboard'
+@import 'cabinet/cabinet-channels'
+
+@import 'modules/preview'

@@ -1,0 +1,177 @@
+footer
+	position: relative
+	width: 100%
+	margin: vw(69, $design-mobile) auto 0
+	padding: vw(42, $design-mobile) vw(30, $design-mobile) vw(44.97, $design-mobile)
+
+	&::before
+		content: ''
+		position: absolute
+		top: 0
+		left: vw(30, $design-mobile)
+		right: vw(30, $design-mobile)
+		z-index: 2
+		display: block
+		height: vw(5, $design-mobile)
+		border-radius: 6px
+		border: 1px solid #EF6E47
+		background: linear-gradient(43.32deg, #FDD8A0 3.56%, #FC657C 97.58%)
+		box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.25), inset 6px 6px 12px rgba(210, 78, 49, 0.7)
+
+	&::after
+		content: ''
+		position: absolute
+		bottom: 29px
+		left: 50%
+		transform: translateX(-50%)
+		display: none
+		width: 289px
+		height: 61px
+		margin-left: 15px
+		background: url('../img/footer-waves.png') 0 0 no-repeat
+		background-size: 100% 100%
+
+	@media only screen and (min-width : $screen-md)
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		max-width: 970px
+		margin: vw(142) auto 0
+		padding: 62px 35px 105px
+
+		&::before
+			left: 15px
+			right: 15px
+			height: 12px
+
+		&::after
+			right: 0
+			left: auto
+			transform: translateX(0)
+			display: block
+			width: 251px
+			height: 53px
+			margin-left: 0
+
+	@media only screen and (min-width : $screen-lg)
+		padding-left: 75px
+		padding-right: 75px
+
+		&::before
+			right: 37px
+
+		&::after
+			width: 289px
+			height: 61px
+			margin-right: 12px
+	
+	@media only screen and (min-width : $screen-wide)
+		margin-top: 142px
+
+.footer-list
+	display: flex
+	flex-direction: row
+	flex-wrap: wrap
+	max-width: vw(261.44, $design-mobile)
+	margin: 0 auto
+	padding: 0
+	list-style: none
+
+	@media only screen and (min-width : $screen-md)
+		max-width: 440px
+		margin: 0
+
+	&__item
+		flex: 0 0 vw(121.35, $design-mobile)
+		max-width: vw(121.35, $design-mobile)
+		
+		&:nth-child(2n)
+			flex: 0 0 vw(93.45, $design-mobile)
+			max-width: vw(93.45, $design-mobile)
+			margin-left: auto
+
+		@media only screen and (min-width : $screen-md)
+			&,
+			&:nth-child(2n)
+				flex: 0 0 calc(50% - 20px)
+				max-width: calc(50% - 20px)
+				margin: 0 10px 10px
+
+		@media only screen and (min-width : $screen-lg)
+			&,
+			&:nth-child(2n)
+				margin-left: 0
+				margin-right: 20px
+
+		&__link
+			display: inline-block
+			padding: em(6.97, 12.5529)
+			color: #2B2B2B
+			font-size: vw(12.5529, $design-mobile)
+			font-weight: 300
+			line-height: em(18.83, 12.5529)
+			text-decoration: none
+
+			&:hover
+				color: inherit
+				text-decoration: underline
+
+			@media only screen and (min-width : $screen-md)
+				padding: 10px
+				font-size: 18px
+				line-height: em(27, 18)
+
+.footer-content
+	display: none
+	flex-wrap: nowrap
+	flex-direction: column
+	align-items: center
+
+	@media only screen and (min-width : $screen-md)
+		display: flex
+
+	.logo
+		margin-top: 29px
+		margin-bottom: 31px
+
+	.social
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+
+		&__item
+			margin: 0 7.5px 15px
+
+	@media only screen and (min-width : $screen-md)
+		margin-top: auto
+
+.logo
+	position: relative
+	display: inline-block
+	color: #000
+	font-size: 36px
+	font-weight: normal
+	line-height: em(42.19, 36)
+	text-decoration: none
+	transition: color .2s
+
+	&::before
+		content: attr(data-text)
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 2
+		display: inline-block
+		color: #000
+		background: linear-gradient(133.32deg, #FDD8A0 3.56%, #FC657C 97.58%)
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+		transition: opacity .2s
+		opacity: 0
+
+	&:hover
+		color: rgba(0, 0, 0, 0)
+		text-decoration: none
+
+		&::before
+			opacity: 1

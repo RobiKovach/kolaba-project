@@ -1,0 +1,166 @@
+%box-style
+	border-radius: 22px
+	background: linear-gradient(183.6deg, #F1FAFF 25.58%, #E9F1F8 66.56%)
+	box-shadow: -6px -6px 12px rgba(255, 255, 255, 0.43), 8px 8px 12px #CAD2D9
+
+@mixin box-style
+	border-radius: 22px
+	background: linear-gradient(183.6deg, #F1FAFF 25.58%, #E9F1F8 66.56%)
+	box-shadow: -6px -6px 12px rgba(255, 255, 255, 0.43), 8px 8px 12px #CAD2D9
+
+%box-style-mobile
+	border-radius: vw(18.2377, $design-mobile)
+	box-shadow: vw(-4.97391, $design-mobile) vw(-4.97391, $design-mobile) vw(9.94782, $design-mobile) rgba(255, 255, 255, 0.43), vw(6.63188, $design-mobile) vw(6.63188, $design-mobile) vw(9.94782, $design-mobile) #CAD2D9
+	background: linear-gradient(183.6deg, #F1FAFF 25.58%, #E9F1F8 66.56%)
+
+.dashboard-list
+	display: flex
+	flex-wrap: wrap
+	width: 100%
+	margin: vw(30, $design-mobile) auto
+
+	&__col
+		flex: 0 0 100%
+		max-width: 100%
+		padding: 0 vw(30, $design-mobile) vw(24.87, $design-mobile)
+
+	@media only screen and (min-width : $screen-md)
+		max-width: 840px
+		margin-top: auto
+		margin-bottom: auto
+
+		&__col
+			flex: 0 0 50%
+			max-width: 50%
+			padding: 20px
+
+	@media only screen and (min-width : $screen-lg)
+		max-width: 880px
+
+		&__col
+			flex: 0 0 50%
+			max-width: 50%
+			padding: 30px
+
+
+.dashboard-item
+	position: relative
+	display: flex
+	flex-wrap: nowrap
+	align-items: center
+	padding: vw(20.72, $design-mobile) vw(21.55, $design-mobile)
+	@extend %box-style-mobile
+
+	@media only screen and (min-width : $screen-md)
+		padding: 40px 44px 40px 26px
+		@include box-style
+
+	&__icon
+		width: vw(93.26, $design-mobile) 
+		height: vw(82.9, $design-mobile) 
+		margin-right: auto
+
+		@media only screen and (min-width : $screen-md)
+			width: 112.5px
+			height: 100px
+			margin-right: 0
+
+	&__content
+		display: flex
+		flex-wrap: nowrap
+		justify-content: center
+		align-items: center
+		min-width: em(131.8, 14.9217)
+		width: max-content
+		max-width: 100%
+		margin-left: auto
+		margin-right: auto
+		padding: em(6.63, 14.9217) em(18.24, 14.9217) em(6.63, 14.9217) em(25.7, 14.9217)
+		color: #000
+		font-size: vw(14.9217, $design-mobile) 
+		font-weight: 400
+		line-height: em(22.38, 14.9217)
+		background: linear-gradient(70.01deg, #E9F1F8 23.58%, #F1FAFF 75.95%)
+		border: em(0.828985, 14.9217) solid #F1FAFF
+		box-shadow: inset em(-1.65797, 14.9217) em(-1.65797, 14.9217) em(3.31594, 14.9217) rgba(255, 255, 255, 0.95), inset em(4.97391, 14.9217) em(4.97391, 14.9217) em(9.94782, 14.9217) #CBD3DA
+		border-radius: em(19.8956, 14.9217)
+
+		@media only screen and (min-width : $screen-md)
+			min-width: 159px
+			margin-right: 0
+			padding: 8px 22px 8px 31px
+			font-size: 18px
+			line-height: em(27, 18)
+			border-width: 1px
+			box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.95), inset 6px 6px 12px #CBD3DA
+			border-radius: 24px
+
+		&__name
+			margin-right: em(3.32, 14.9217)
+
+			@media only screen and (min-width : $screen-md)
+				margin-right: 4px
+
+		&__count
+			min-width: em(26.53, 14.9217)
+			padding: em(1.66, 14.9217) em(3.8, 14.9217) em(2.49, 14.9217) em(3.8, 14.9217)
+			font-weight: 700
+			text-align: center
+			border-radius: em(19.8956, 14.9217)
+			border: em(0.828985, 14.9217) solid #F1FAFF
+			background: linear-gradient(160.01deg, #E9F1F8 23.58%, #F1FAFF 75.95%)
+			box-shadow: inset em(-1.65797, 14.9217) em(-1.65797, 14.9217) em(3.31594, 14.9217) rgba(255, 255, 255, 0.95), inset em(2.48696, 14.9217) em(2.48696, 14.9217) em(4.97391, 14.9217) #CBD3DA
+
+			&.active
+				color: #fff
+				border-radius: em(18.2377, 14.9217)
+				border: em(0.828985, 14.9217) solid #E5E5E5
+				background: linear-gradient(133.32deg, #FDD8A0 3.56%, #FC657C 97.58%)
+				box-shadow: em(-2.48696, 14.9217) em(-2.48696, 14.9217) em(4.97391, 14.9217) rgba(255, 255, 255, 0.25), em(2.48696, 14.9217) em(2.48696, 14.9217) em(4.97391, 14.9217) #CCD3DB
+
+			@media only screen and (min-width : $screen-md)
+				min-width: 32px
+				padding: 2px 5px 1px 5px
+				border-radius: 24px
+				border-width: 1px
+				box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.95), inset 3px 3px 6px #CBD3DA
+
+				&.active
+					border-radius: 22px
+					border-width: 1px
+					box-shadow: -3px -3px 6px rgba(255, 255, 255, 0.25), 3px 3px 6px #CCD3DB
+
+	&__link
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		z-index: 11
+		display: block
+		border-radius: inherit
+		cursor: pointer
+		text-decoration: none
+		color: rgba(0, 0, 0, .0) !important
+		outline: none
+		opacity: 0
+
+
+.cabinet-short-title
+	align-self: center
+	margin: em(30, 20) em(15, 20)
+	padding-left: em(15, 20)
+	padding-right: em(15, 20)
+	color: #000
+	font-size: vw(20, $design-mobile)
+	font-weight: 400
+	font-family: $font
+	line-height: em(30, 20)
+	text-align: center
+
+	@media only screen and (min-width : $screen-md)
+		margin: 30px 15px
+		padding-left: 15px
+		padding-right: 15px
+		font-size: 28px
+		line-height: em(42, 28)

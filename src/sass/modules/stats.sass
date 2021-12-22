@@ -1,0 +1,90 @@
+.stats
+	margin-top: vw(110, $design-mobile)
+
+	@media only screen and (min-width : $screen-md)
+		margin-top: vw(104)
+		margin-bottom: vw(80)
+	
+	@media only screen and (min-width : $screen-wide)
+		margin-top: 104px
+		margin-bottom: 80px
+		
+
+.stats-list
+	position: relative
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	max-width: 1200px
+	margin: 0 auto
+	padding: 0 0 1px
+
+	&::after
+		content: ''
+		position: absolute
+		right: vw(74, $design-mobile)
+		bottom: vw(-8, $design-mobile)
+		z-index: -1
+		display: block
+		width: vw(60, $design-mobile)
+		height: vw(60, $design-mobile)
+		background: url('../img/plus-big.png') 0 0 no-repeat
+		background-size: cover
+
+		@media only screen and (min-width : $screen-md)
+			display: none
+
+	&__item
+		display: flex
+		flex-direction: column
+		flex-wrap: nowrap
+		align-items: center
+		flex: 0 0 100%
+		max-width: 100%
+		margin-bottom: vw(60, $design-mobile)
+		padding-left: vw(15, $design-mobile)
+		padding-right: vw(15, $design-mobile)
+		color: #000
+
+		@media only screen and (min-width : $screen-md)
+			flex: 0 0 50%
+			max-width: 50%
+			margin-bottom: 25px
+			padding-left: 15px
+			padding-right: 15px
+
+		@media only screen and (min-width : $screen-xl)
+			flex: 0 1 auto
+			max-width: none
+
+		&__title
+			margin-bottom: em(11.05, 17.6842)
+			font-size:  vw(17.6842, $design-mobile)
+			font-weight: 400
+			line-height: em(26.53, 17.6842)
+
+			@media only screen and (min-width : $screen-md)
+				margin-bottom: 15px
+				font-size: 24px
+				line-height: 1.5
+
+		&__count
+			min-width: em(45.68, 32.4211)
+			margin-top: auto
+			padding: em(3.68, 32.4211) em(19.9, 32.4211) em(3.68, 32.4211) em(14, 32.4211)
+			font-size: vw(32.4211, $design-mobile)
+			font-weight: 700
+			line-height: em(37.99, 32.4211)
+			border-radius: em(17.6842, 32.4211)
+			border: em(0.736842, 32.4211) solid #F1FAFF
+			background: linear-gradient(253.97deg, #E9F1F8 27.61%, #F1FAFF 79.48%)
+			box-shadow: em(-1.47368, 32.4211) em(-1.47368, 32.4211) em(7.36842, 32.4211) rgba(255, 255, 255, 0.95), em(4.42105, 32.4211) em(4.42105, 32.4211) em(8.8421, 32.4211) #CBD3DA
+
+			@media only screen and (min-width : $screen-md)
+				min-width: 62px
+				padding: 5px 24px
+				font-size: 44px
+				line-height: em(52, 44)
+				border-radius: 24px
+				border-width: 1px
+				box-shadow: -2px -2px 10px rgba(255, 255, 255, 0.95), 6px 6px 12px #CBD3DA

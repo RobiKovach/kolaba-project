@@ -1,0 +1,284 @@
+.ellipse
+	position: absolute
+	top: vw(-32, $design-mobile)
+	left: vw(-17, $design-mobile)
+	z-index: -1
+	width: vw(103.2, $design-mobile)
+	background: url('../img/ellipse_illustration.png') 0 0 no-repeat
+	background-size: cover
+
+	&::before
+		content: ''
+		position: relative
+		display: block
+		width: 100%
+		padding-top: procent(303, 240)
+
+	@media only screen and (min-width : $screen-md)
+		top: 0
+		left: -76px
+		width: 240px
+
+.roadmap-section
+	position: relative
+	padding-top: vw(105, $design-mobile)
+
+	@media only screen and (min-width : $screen-md)
+		margin-top: vw(80)
+		margin-bottom: vw(112)
+		padding-top: 120px
+	
+	@media only screen and (min-width : $screen-wide)
+		margin-top: 80px
+		margin-bottom: 112px
+
+	.short-title
+		margin-bottom: vw(47.8, $design-mobile)
+
+		@media only screen and (min-width : $screen-md)
+			margin-bottom: 66px
+
+	&__content
+		position: relative
+
+		&__decor-right
+			position: absolute
+			top: 0
+			right: 0
+			z-index: -1
+			display: none
+			width: 309px
+			height: 73px
+			overflow: hidden
+
+			&::after
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				display: block
+				width: 367px
+				height: 73px
+				background: url('../img/footer-waves.png') 0 0 no-repeat
+				background-size: cover
+
+			@media only screen and (min-width : $screen-md)
+				display: block
+
+		&__decor-left
+			position: absolute
+			left: 0
+			bottom: 18px
+			z-index: -1
+			display: none
+			width: 309px
+			height: 73px
+			overflow: hidden
+
+			&::after
+				content: ''
+				position: absolute
+				top: 0
+				right: 0
+				display: block
+				width: 417px
+				height: 73px
+				background: url('../img/waves-big.png') 0 0 no-repeat
+				background-size: cover
+
+			@media only screen and (min-width : $screen-md)
+				display: block
+
+.roadmap
+	position: relative
+	max-width: 851px
+	margin: 0 auto
+	padding: vw(12, $design-mobile) vw(30, $design-mobile) vw(26, $design-mobile)
+	list-style: none
+
+	& + &
+		margin-top: vw(11.85, $design-mobile)
+
+	&:first-child
+		padding-top: vw(36.51, $design-mobile)
+
+	&:last-child
+		padding-bottom: vw(20, $design-mobile)
+
+	&.space
+		display: block
+		padding-top: vw(10.275, $design-mobile)
+		padding-bottom: vw(10.275, $design-mobile)
+
+	@media only screen and (min-width : $screen-md)
+		padding: 12px 15px 26px
+
+		& + &
+			margin-top: 15px
+
+		&:first-child
+			padding-top: 49px
+
+		&:last-child
+			padding-bottom: 20px
+
+		&.space
+			padding-top: 13px
+			padding-bottom: 13px
+
+	&::before
+		content: ''
+		position: absolute
+		top: 0
+		left: vw(122, $design-mobile)
+		bottom: 0
+		display: block
+		width: vw(7, $design-mobile)
+		margin-left: vw(-3.5, $design-mobile)
+		border-radius: vw(3.91158, $design-mobile)
+		border: vw(0.65193, $design-mobile) solid #EF6E47
+		background: linear-gradient(133.32deg, #FDD8A0 3.56%, #FC657C 97.58%)
+		box-shadow: inset vw(-1.30386, $design-mobile) vw(-1.30386, $design-mobile) vw(2.60772, $design-mobile) rgba(255, 255, 255, 0.25), inset vw(3.91158, $design-mobile) vw(13.91158, $design-mobile) vw(7.82316, $design-mobile) rgba(210, 78, 49, 0.7)
+
+		@media only screen and (min-width : $screen-md)
+			left: 50%
+			width: 12px
+			margin-left: -6px
+			border-radius: 6px
+			border-width: 1px
+			box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.25), inset 6px 6px 12px rgba(210, 78, 49, 0.7)
+
+	.active
+		& > :first-child
+			position: relative
+
+			@media only screen and (min-width : $screen-md)
+				position: static
+
+			&::before
+				content: ''
+				position: absolute
+				top: 50%
+				left: vw(92, $design-mobile)
+				display: block
+				width: vw(16.3, $design-mobile)
+				height: vw(16.3, $design-mobile)
+				transform: translate(-50%, -50%)
+				background: linear-gradient(134.19deg, #EE8B70 14.93%, #EF6E47 85.94%)
+				box-shadow: vw(-1.30386, $design-mobile) vw(-1.30386, $design-mobile) vw(2.60772, $design-mobile) rgba(255, 255, 255, 0.25), vw(2.60772, $design-mobile) vw(2.60772, $design-mobile) vw(6.5193, $design-mobile) rgba(30, 30, 30, 0.29)
+				border-radius: vw(7.82316, $design-mobile)
+
+				@media only screen and (min-width : $screen-md)
+					left: 50%
+					width: 25px
+					height: 25px
+					box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.25), 4px 4px 10px rgba(30, 30, 30, 0.29)
+					border-radius: 12px
+					
+
+			&::after
+				content: ''
+				position: absolute
+				top: 50%
+				left: vw(92, $design-mobile)
+				display: block
+				width: vw(15.65, $design-mobile)
+				height: vw(15.65, $design-mobile)
+				transform: translate(-50%, -50%)
+				background: linear-gradient(43.32deg, #FDD8A0 3.56%, #FC657C 97.58%)
+				border-radius: vw(7.82316, $design-mobile)
+
+				@media only screen and (min-width : $screen-md)
+					left: 50%
+					width: 23px
+					height: 23px
+					border-radius: 12px
+
+
+	&__content
+		position: relative
+		display: flex
+		flex-wrap: nowrap
+		flex-direction: row
+		justify-content: space-between
+		min-height: vw(24, $design-mobile)
+
+		@media only screen and (min-width : $screen-md)
+			align-items: center
+			min-height: 60px
+
+		& + .roadmap__content
+			margin-top: vw(30, $design-mobile)
+
+			@media only screen and (min-width : $screen-md)
+				margin-top: 30px
+		
+		&--first
+			flex: 0 0 vw(72, $design-mobile)
+			max-width: vw(72, $design-mobile)
+
+			&.roadmap__content__left
+				text-align: right
+
+		&--second
+			flex: 0 0 vw(203, $design-mobile)
+			max-width: vw(203, $design-mobile)
+			margin-left: vw(40, $design-mobile)
+		
+
+		// &__left
+		// &__right
+		// 	margin-left: 50px
+
+		@media only screen and (min-width : $screen-md)
+			&__left
+				order: 1
+				flex: 0 0 calc(50% - 30px)
+				max-width: calc(50% - 30px)
+				display: flex
+				flex-wrap: wrap
+				justify-content: flex-end
+				margin-left: 0
+
+				.roadmap__title
+					text-align: right
+
+				.roadmap__text
+					display: flex
+					flex-wrap: wrap
+					align-content: center
+
+			&__right
+				order: 2
+				flex: 0 0 calc(50% - 30px)
+				max-width: calc(50% - 30px)
+				margin-left: 0
+
+	&__title
+		margin-bottom: 0
+		color: #000
+		font-size: vw(15.6463, $design-mobile)
+		line-height: em(23.47, 15.6463)
+
+		@media only screen and (min-width : $screen-md)
+			font-size: 24px
+			line-height: em(36, 24)
+
+	&__text
+		color: #2B2B2B
+		font-size: vw(12, $design-mobile)
+		font-weight: 300
+		line-height: 1.5em
+
+		@media only screen and (min-width : $screen-md)
+			font-size: 18px
+			line-height: 1.5em
+
+		p
+			margin-bottom: 0
+
+			& + p
+				margin-top: vw(6, $design-mobile)
+
+				@media only screen and (min-width : $screen-md)
+					margin-top: 15px

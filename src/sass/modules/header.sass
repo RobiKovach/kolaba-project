@@ -1,0 +1,98 @@
+.header
+	padding: vw(35, $design-mobile) vw(32, $design-mobile) vw(19.94, $design-mobile) vw(30, $design-mobile)
+
+	@media only screen and (min-width : $screen-md)
+		padding-top: vw(52)
+		padding-left: 0
+		padding-right: 0
+		padding-bottom: vw(38)
+
+	@media only screen and (min-width : $screen-wide)
+		padding-top: 52px
+		padding-bottom: 38px
+
+	&__container
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		align-items: center
+		max-width: 1308px
+		margin-left: auto
+		margin-right: auto
+
+		@media only screen and (min-width : $screen-md)
+			padding-left: 15px
+			padding-right: 15px
+
+		@media only screen and (min-width : $screen-wide)
+			justify-content: flex-start
+
+	.logo
+		top: vw(8, $design-mobile)
+		align-self: flex-start
+		font-size: vw(20, $design-mobile)
+		line-height: vw(23.44, $design-mobile)
+
+		@media only screen and (min-width : $screen-md)
+			top: 3px
+			font-size: 30px
+			line-height: em(35.16, 30)
+
+	.navigation
+		display: none
+
+		@media only screen and (min-width : $screen-md)
+			display: block
+
+		@media only screen and (min-width : $screen-wide)
+			margin-left: 126.6px
+			margin-right: 85px
+
+	.social
+		display: none
+
+		@media only screen and (min-width : $screen-lg)
+			display: flex
+
+		@media only screen and (min-width : $screen-wide)
+			margin-right: auto
+
+	&__buttons
+		display: none
+
+		@media only screen and (min-width : $screen-md)
+			display: flex
+			flex-wrap: nowrap
+
+			> * + *
+				margin-left: 12px
+
+		@media only screen and (min-width : $screen-lg)
+			> * + *
+				margin-left: 27px
+
+		@media only screen and (min-width : $screen-wide)
+			margin-left: auto
+
+	.languages
+		display: none
+		margin-right: 10px
+
+		@media only screen and (min-width : $screen-md)
+			display: block
+
+		@media only screen and (min-width : $screen-wide)
+			margin-right: 0
+
+.btn-burger
+	display: block
+	width: vw(32, $design-mobile)
+	height: vw(32, $design-mobile)
+	color: #000
+
+	&:hover
+		color: #000
+		text-decoration: none
+
+	@media only screen and (min-width : $screen-md)
+		display: none

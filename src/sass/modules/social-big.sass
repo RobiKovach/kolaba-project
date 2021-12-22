@@ -1,0 +1,109 @@
+.social-block
+	margin-top: 75px
+	margin-bottom: 72px
+
+	@media only screen and (min-width : $screen-md)
+		margin-top: vw(150)
+		margin-bottom: vw(142)
+	
+	@media only screen and (min-width : $screen-wide)
+		margin-top: 150px
+		margin-bottom: 142px
+
+	.short-title
+		margin-bottom: em(61.04, 20.1794)
+		font-size: vw(20.1794, $design-mobile)
+		line-height: em(23.65, 20.1794)
+
+		@media only screen and (min-width : $screen-md)
+			margin-bottom: 30px
+			font-size: 32px
+			line-height: em(37.5, 32)
+
+		@media only screen and (min-width : $screen-xl)
+			margin-bottom: 48px
+
+	&__content
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		padding-left: vw(10, $design-mobile)
+		padding-right: vw(10, $design-mobile)
+
+		a
+			margin: vw(10, $design-mobile)
+
+		@media only screen and (min-width : $screen-md)
+			padding-left: 20px
+			padding-right: 20px
+
+			a
+				margin: 20px
+
+		@media only screen and (min-width : $screen-xl)
+			padding-left: 50px
+			padding-right: 50px
+
+			a
+				margin: 50px
+			
+
+.social-style-3
+	position: relative
+	display: flex
+	justify-content: center
+	align-items: center
+	align-content: center
+	text-decoration: none
+	width: vw(50, $design-mobile)
+	height: vw(50, $design-mobile)
+	border-radius: 6px
+
+	.svg-icon
+		width: procent(100, 150)
+		height: procent(100, 150)
+
+	@media only screen and (min-width : $screen-md)
+		width: 150px
+		height: 150px
+		border-radius: 12px
+
+	stop
+		transition: .2s ease
+
+	&::before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		z-index: -1
+		display: block
+		border-radius: inherit
+		border: 1px solid #F1FAFF
+		background: linear-gradient(160.01deg, #E9F1F8 23.58%, #F1FAFF 75.95%)
+		box-shadow: inset 0 0 0 rgba(255, 255, 255, 0.95), inset 0 0 0 #CBD3DA
+		transition: opacity .2s, box-shadow .15s
+		opacity: 0
+
+	&:hover
+		text-decoration: none
+
+		stop
+			&:first-child
+				stop-color: #000
+			&:last-child
+				stop-color: #000
+
+	&:active,
+	&:focus
+		stop
+			&:first-child
+				stop-color: #D5B078
+			&:last-child
+				stop-color: #CA334A
+
+		&::before
+			opacity: 1
+			box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.95), inset 4px 4px 8px #CBD3DA
